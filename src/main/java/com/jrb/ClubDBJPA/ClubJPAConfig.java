@@ -24,9 +24,9 @@ public class ClubJPAConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost/CLUB294?serverTimezone=UTC&useSSL=false");
-		dataSource.setUsername("root");
-		dataSource.setPassword("ryan");
+		dataSource.setUrl("jdbc:mysql://localhost/CLUB296?serverTimezone=UTC&useSSL=false");
+		dataSource.setUsername("webapp_user");
+		dataSource.setPassword("testing123");
 		return dataSource;
 	}
 
@@ -35,7 +35,7 @@ public class ClubJPAConfig {
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		factoryBean.setPersistenceProviderClass(HibernatePersistence.class);
 		factoryBean.setDataSource(dataSource());
-		factoryBean.setPackagesToScan("com.jrb.ClubJPAConfig");
+		factoryBean.setPackagesToScan("com.jrb.ClubDBJPA");
 		factoryBean.setJpaPropertyMap(jpaProperties());
 		return factoryBean;
 	}
@@ -43,7 +43,7 @@ public class ClubJPAConfig {
 	private Map<String, ?> jpaProperties() {
 		Map<String, String> jpaPropertiesMap = new HashMap<String, String>();
 		jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "validate");
+        //jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "update");
 		return jpaPropertiesMap;
 	}
 

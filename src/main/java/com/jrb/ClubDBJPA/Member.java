@@ -1,6 +1,5 @@
 package com.jrb.ClubDBJPA;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +10,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -51,7 +49,7 @@ public class Member {
 	private Date ytdtotdt;
 
 	@Column(name = "YTD_Total")
-	private Double ytdtot;
+	private double ytdtot;
 
 	@Column(name = "Password")
 	private long password;
@@ -72,7 +70,7 @@ public class Member {
 		this.status = "";
 		this.memdt = null;
 		this.ytdtotdt = null;
-		this.ytdtot = null;
+		this.ytdtot = 0;
 		this.password = -1;
 		this.passwordatt = 0;
 	}
