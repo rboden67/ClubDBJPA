@@ -43,6 +43,7 @@ public class ClubJPAConfig {
 	private Map<String, ?> jpaProperties() {
 		Map<String, String> jpaPropertiesMap = new HashMap<String, String>();
 		jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "validate");
 		return jpaPropertiesMap;
 	}
 
